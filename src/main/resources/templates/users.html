@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+    <style>
+       table, td, th {
+           border: 1px solid black;
+             }
+       th {
+          background-color: black;
+          color:white;
+          }
+          body {
+                 background-color: linen;
+              }
+              a {
+               background-color:white;
+               border-radius: 20px;
+               margin: 4px 2px;
+               cursor: pointer;
+               }
+    </style>
+<body>
+<center>
+    <h2>Manage Users</h2>
+    <a class="btn btn-primary btn-lg"
+       th:href="@{/users/new}">Add New Users</a>
+    <div th:if="${message}" class="alert alert-success text-centre">
+        [[${message}]]
+    </div>
+    <table >
+        <thead >
+            <th>ID</th>
+            <th>E-mail</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Enabled</th>
+            <th>Actions</th>
+        </thead>
+        <tbody>
+        <th:block th:each="user : ${listUsers}">
+            <tr>
+                <td>[[${user.id}]]</td>
+                <td>[[${user.email}]]</td>
+                <td>[[${user.firstName}]]</td>
+                <td>[[${user.lastName}]]</td>
+                <td>[[${user.enabled}]]</td>
+                <td>
+                    <a class="btn btn-primary btn-lg"
+                       th:href="@{'/users/edit/' + ${user.id}}">Edit</a>
+                    <a class="btn btn-primary btn-lg"
+                       th:href="@{'/users/delete/' + ${user.id}}">Delete</a>
+                </td>
+            </tr>
+        </th:block>
+        </tbody>
+    </table>
+</center>
+</body>
+</html>
