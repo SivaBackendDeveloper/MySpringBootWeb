@@ -1,18 +1,22 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
+    
     <title>Welcome</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 </head>
-<center>
-<body>
-<div class="container-fluid text-center">
-    <h1>Welcome Spring Boot Web Application</h1>
-    <a class="btn btn-primary" th:href="@{/users}">Manage Users</a>
 
-</div>
-</body>
-</center>
+    <body>
+    <div class="container-fluid text-center">
+        <h1>Welcome Users INFO</h1>
+        <a class="btn btn-primary">Login</a>
+        <a class="btn btn-primary" th:href="@{/users}">Manage Users</a>
+        <a class="btn btn-primary" >Register</a>
+    </div>
+    </body>
+
 </html>

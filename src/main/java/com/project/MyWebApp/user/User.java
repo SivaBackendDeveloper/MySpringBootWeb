@@ -3,13 +3,11 @@ package com.project.MyWebApp.user;
 
 import javax.persistence.*;
 
-//@Getter
-//@Setter
-//@NoArgsConstructor
-//@AllArgsConstructor
+
 @Entity
 @Table(name = "users")
 public class User {
+	
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
